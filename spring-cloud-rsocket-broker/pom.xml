@@ -21,19 +21,19 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.cloud</groupId>
-		<artifactId>spring-cloud-gateway-rsocket</artifactId>
-		<version>2.2.0.BUILD-SNAPSHOT</version>
+		<artifactId>spring-cloud-rsocket</artifactId>
+		<version>0.2.0.BUILD-SNAPSHOT</version>
 		<relativePath>..</relativePath> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>org.springframework.cloud</groupId>
-	<artifactId>spring-cloud-gateway-rsocket-broker</artifactId>
-	<name>Spring Cloud Gateway RSocket Broker</name>
-	<description>Spring Cloud Gateway RSocket Broker</description>
+	<artifactId>spring-cloud-rsocket-broker</artifactId>
+	<name>Spring Cloud RSocket Broker</name>
+	<description>Spring Cloud RSocket Broker</description>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-gateway-rsocket-common</artifactId>
+			<artifactId>spring-cloud-rsocket-common</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -86,7 +86,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-gateway-rsocket-common</artifactId>
+			<artifactId>spring-cloud-rsocket-common</artifactId>
 			<version>${project.version}</version>
 			<type>test-jar</type>
 			<scope>test</scope>
