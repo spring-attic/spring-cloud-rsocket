@@ -35,6 +35,14 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class RoutingTableTests {
 
 	@Test
+	public void testNullTagsMetadata() {
+		RoutingTable routingTable = new RoutingTable();
+		RoaringBitmap bitmap = routingTable.find(null);
+		assertThat(bitmap).isNotNull();
+		assertThat(bitmap.isEmpty()).isTrue();
+	}
+
+	@Test
 	public void testIndexesCreatedAndSearchWorks() {
 		RoutingTable routingTable = new RoutingTable();
 		// @formatter:off

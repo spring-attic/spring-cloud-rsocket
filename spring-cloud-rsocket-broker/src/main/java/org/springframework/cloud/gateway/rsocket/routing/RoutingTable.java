@@ -190,6 +190,12 @@ public class RoutingTable {
 	 */
 	RoaringBitmap find(TagsMetadata tagsMetadata) {
 		RoaringBitmap found = new RoaringBitmap();
+		if (tagsMetadata == null) {
+			if (log.isDebugEnabled()) {
+				log.debug("find() called with null TagsMetadata");
+			}
+			return found;
+		}
 		AtomicBoolean first = new AtomicBoolean(true);
 		tagsMetadata.getTags().forEach((key, value) -> {
 			TagKey tagKey = new TagKey(key, value);
