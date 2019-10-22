@@ -1,0 +1,14 @@
+= Spring Cloud RSocket
+include::_attributes.adoc[]
+
+*{spring-cloud-version}*
+
+include::intro.adoc[]
+
+include::including.adoc[]
+
+TODO: add documentation.
+
+== Configuration properties
+
+To see the list of all Spring Cloud RSocket related configuration properties please check link:appendix.html[the Appendix page].

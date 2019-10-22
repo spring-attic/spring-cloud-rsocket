@@ -4,26 +4,75 @@ Manual changes to this file will be lost when it is generated again.
 Edit the files in the src/main/asciidoc/ directory instead.
 ////
 
-image::https://circleci.com/gh/spring-cloud/spring-cloud-gateway/tree/master.svg?style=svg["CircleCI", link="https://circleci.com/gh/spring-cloud/spring-cloud-gateway/tree/master"]
-image::https://codecov.io/gh/spring-cloud/spring-cloud-gateway/branch/master/graph/badge.svg["Codecov", link="https://codecov.io/gh/spring-cloud/spring-cloud-gateway/branch/master"]
-image::https://api.codacy.com/project/badge/Grade/a6885a06921e4f72a0df0b7aabd6d118["Codacy code quality", link="https://www.codacy.com/app/spring-cloud/spring-cloud-gateway?utm_source=github.com&utm_medium=referral&utm_content=spring-cloud/spring-cloud-gateway&utm_campaign=Badge_Grade"]
+image::https://circleci.com/gh/spring-cloud-incubator/spring-cloud-rsocket/tree/master.svg?style=svg["CircleCI", link="https://circleci.com/gh/spring-cloud-incubator/spring-cloud-rsocket/tree/master"]
+image::https://codecov.io/gh/spring-cloud-incubator/spring-cloud-rsocket/branch/master/graph/badge.svg["Codecov", link="https://codecov.io/gh/spring-cloud-incubator/spring-cloud-rsocket/branch/master"]
+image::https://api.codacy.com/project/badge/Grade/a6885a06921e4f72a0df0b7aabd6d118["Codacy code quality", link="https://www.codacy.com/app/spring-cloud-incubator/spring-cloud-rsocket?utm_source=github.com&utm_medium=referral&utm_content=spring-cloud-incubator/spring-cloud-rsocket&utm_campaign=Badge_Grade"]
 
 
-This project provides an API Gateway built on top of the Spring Ecosystem, including: Spring 5, Spring Boot 2 and Project Reactor. Spring Cloud Gateway aims to provide a simple, yet effective way to route to APIs and provide cross cutting concerns to them such as: security, monitoring/metrics, and resiliency.
+This project provides an RSocket broker and broker client built on top of the Spring Ecosystem, including: Spring 5, Spring Boot 2 and Project Reactor. Spring Cloud RSocket aims to an implementation of the RSocket Routing and Forwarding specification extension and provide cross cutting concerns to them such as: security, monitoring/metrics, and resiliency.
 
+
+== Incubator status
+
+This project is currently in an incubator status. When the RSocket Routing and Forwarding extension is completed in rsocket-java, this project will move out of incubator.
 
 == Features
 
 * Java 8
-* Spring Framework 5
-* Spring Boot 2
-* Dynamic routing
-* Route matching built into Spring Handler Mapping
-* Route matching on HTTP Request (Path, Method, Header, Host, etc...)
-* Filters scoped to Matching Route
-* Filters can modify downstream HTTP Request and HTTP Response (Add/Remove Headers, Add/Remove Parameters, Rewrite Path, Set Path, Hystrix, etc...)
-* API or configuration driven
-* Supports Spring Cloud `DiscoveryClient` for configuring Routes
+* Spring Framework 5.2
+* Spring Boot 2.2
+* TODO: list features
+
+== Including in your project
+
+You will need to include the spring snapshot repository to your pom.xml:
+```xml
+<repositories>
+    <repository>
+        <id>spring-snapshots</id>
+        <name>Spring Snapshots</name>
+        <url>https://repo.spring.io/libs-snapshot-local</url>
+        <snapshots>
+            <enabled>true</enabled>
+        </snapshots>
+        <releases>
+            <enabled>false</enabled>
+        </releases>
+    </repository>
+</repositories>
+```
+
+Add the following to your dependency management section.
+```xml
+<dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-rsocket-dependencies</artifactId>
+            <version>0.2.0.BUILD-SNAPSHOT</version>
+            <type>pom</type>
+            <scope>import</scope>
+        </dependency>
+    </dependencies>
+</dependencyManagement>
+```
+
+Then use the following dependencies for a client or broker respectively:
+
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-rsocket-client</artifactId>
+</dependency>
+```
+or
+```
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-rsocket-broker</artifactId>
+</dependency>
+```
+
 
 == Building
 

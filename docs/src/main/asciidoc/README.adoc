@@ -1,22 +1,22 @@
-image::https://circleci.com/gh/spring-cloud/spring-cloud-gateway/tree/master.svg?style=svg["CircleCI", link="https://circleci.com/gh/spring-cloud/spring-cloud-gateway/tree/master"]
-image::https://codecov.io/gh/spring-cloud/spring-cloud-gateway/branch/master/graph/badge.svg["Codecov", link="https://codecov.io/gh/spring-cloud/spring-cloud-gateway/branch/master"]
-image::https://api.codacy.com/project/badge/Grade/a6885a06921e4f72a0df0b7aabd6d118["Codacy code quality", link="https://www.codacy.com/app/spring-cloud/spring-cloud-gateway?utm_source=github.com&utm_medium=referral&utm_content=spring-cloud/spring-cloud-gateway&utm_campaign=Badge_Grade"]
+image::https://circleci.com/gh/spring-cloud-incubator/spring-cloud-rsocket/tree/master.svg?style=svg["CircleCI", link="https://circleci.com/gh/spring-cloud-incubator/spring-cloud-rsocket/tree/master"]
+image::https://codecov.io/gh/spring-cloud-incubator/spring-cloud-rsocket/branch/master/graph/badge.svg["Codecov", link="https://codecov.io/gh/spring-cloud-incubator/spring-cloud-rsocket/branch/master"]
+image::https://api.codacy.com/project/badge/Grade/a6885a06921e4f72a0df0b7aabd6d118["Codacy code quality", link="https://www.codacy.com/app/spring-cloud-incubator/spring-cloud-rsocket?utm_source=github.com&utm_medium=referral&utm_content=spring-cloud-incubator/spring-cloud-rsocket&utm_campaign=Badge_Grade"]
 
 
 include::intro.adoc[]
 
+== Incubator status
+
+This project is currently in an incubator status. When the RSocket Routing and Forwarding extension is completed in rsocket-java, this project will move out of incubator.
+
 == Features
 
 * Java 8
-* Spring Framework 5
-* Spring Boot 2
-* Dynamic routing
-* Route matching built into Spring Handler Mapping
-* Route matching on HTTP Request (Path, Method, Header, Host, etc...)
-* Filters scoped to Matching Route
-* Filters can modify downstream HTTP Request and HTTP Response (Add/Remove Headers, Add/Remove Parameters, Rewrite Path, Set Path, Hystrix, etc...)
-* API or configuration driven
-* Supports Spring Cloud `DiscoveryClient` for configuring Routes
+* Spring Framework 5.2
+* Spring Boot 2.2
+* TODO: list features
+
+include::including.adoc[]
 
 == Building
 
