@@ -47,7 +47,8 @@ public class ClientPropertiesTests {
 		assertThat(properties.getServiceName()).isEqualTo("test_requester");
 		assertThat(properties.getTags()).containsEntry(TagKey.of("INSTANCE_NAME"),
 				"test_requester1");
-		assertThat(properties.getForwarding()).containsKey("test_responder-rc");
+		assertThat(properties.getForwarding()).containsKeys("test_responder-rc",
+				"key.with.dots", "key.with.{replacement}");
 		Map<TagKey, String> map = properties.getForwarding().get("test_responder-rc");
 		assertThat(map).contains(entry(TagKey.of("SERVICE_NAME"), "test_responder"),
 				entry(TagKey.of("custom-tag"), "custom-value"));

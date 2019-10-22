@@ -7,6 +7,10 @@ spring.cloud.gateway.rsocket.client:
     test_responder-rc:
       service_name: test_responder
       custom-tag: custom-value
+    "[key.with.dots]":
+      service_name: service_with_dots
+    "[key.with.{replacement}]":
+      service_name: service_with_replacement
   broker:
     host: localhost
     port: 7002
