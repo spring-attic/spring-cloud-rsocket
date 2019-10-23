@@ -1,1 +1,1 @@
-spring-cloud-gateway.adoc
+spring-cloud-rsocket.adoc
