@@ -178,7 +178,7 @@ public class GatewayRSocket extends AbstractGatewayRSocket {
 					// put route in exchange for later use
 					exchange.getAttributes().put(ROUTE_ATTR, route);
 					return findRSocketOrCreatePending(exchange, route);
-				}).switchIfEmpty(createPending(exchange));
+				}).switchIfEmpty(Mono.defer(() -> createPending(exchange)));
 
 		// TODO: deal with connecting to cluster?
 	}
